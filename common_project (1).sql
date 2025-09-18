@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 18, 2025 at 05:26 AM
+-- Generation Time: Sep 18, 2025 at 07:18 AM
 -- Server version: 8.0.43-0ubuntu0.24.04.1
 -- PHP Version: 8.3.25
 
@@ -86,7 +86,15 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `ev
 (37, 'POST', 'http://127.0.0.1:8000/login', NULL, NULL, NULL, 'App\\Models\\User', 1, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/login\", \"user\": {\"name\": \"Appinion (superadmin)\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"POST\", \"form_data\": {\"userid\": \"superadmin\"}}', NULL, '2025-09-18 05:08:36', '2025-09-18 05:08:36'),
 (38, 'DELETE', 'http://127.0.0.1:8000/admin-console/menus/180', NULL, NULL, NULL, 'App\\Models\\User', 1, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/admin-console/menus/180\", \"user\": {\"name\": \"Appinion (superadmin)\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"DELETE\", \"form_data\": []}', NULL, '2025-09-18 05:08:54', '2025-09-18 05:08:54'),
 (39, 'POST', 'http://127.0.0.1:8000/logout', NULL, NULL, NULL, NULL, NULL, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/logout\", \"user\": {\"name\": \"Guest\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"POST\", \"form_data\": []}', NULL, '2025-09-18 05:18:10', '2025-09-18 05:18:10'),
-(40, 'POST', 'http://127.0.0.1:8000/login', NULL, NULL, NULL, 'App\\Models\\User', 1, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/login\", \"user\": {\"name\": \"Appinion (superadmin)\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"POST\", \"form_data\": {\"userid\": \"superadmin\"}}', NULL, '2025-09-18 05:21:49', '2025-09-18 05:21:49');
+(40, 'POST', 'http://127.0.0.1:8000/login', NULL, NULL, NULL, 'App\\Models\\User', 1, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/login\", \"user\": {\"name\": \"Appinion (superadmin)\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"POST\", \"form_data\": {\"userid\": \"superadmin\"}}', NULL, '2025-09-18 05:21:49', '2025-09-18 05:21:49'),
+(41, 'POST', 'http://127.0.0.1:8000/login', NULL, NULL, NULL, 'App\\Models\\User', 1, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/login\", \"user\": {\"name\": \"Appinion (superadmin)\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"POST\", \"form_data\": {\"userid\": \"superadmin\"}}', NULL, '2025-09-18 05:42:25', '2025-09-18 05:42:25'),
+(42, 'POST', 'http://127.0.0.1:8000/login', NULL, NULL, NULL, 'App\\Models\\User', 1, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/login\", \"user\": {\"name\": \"Appinion (superadmin)\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"POST\", \"form_data\": {\"userid\": \"superadmin\"}}', NULL, '2025-09-18 05:46:13', '2025-09-18 05:46:13'),
+(43, 'POST', 'http://127.0.0.1:8000/admin-console/user-roles', NULL, NULL, NULL, 'App\\Models\\User', 1, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/admin-console/user-roles\", \"user\": {\"name\": \"Appinion (superadmin)\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"POST\", \"form_data\": {\"title\": \"Sit omnis quia cons\", \"is_active\": \"1\"}}', NULL, '2025-09-18 05:48:24', '2025-09-18 05:48:24'),
+(44, 'PUT', 'http://127.0.0.1:8000/users/19', NULL, NULL, NULL, 'App\\Models\\User', 1, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/users/19\", \"user\": {\"name\": \"Appinion (superadmin)\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"PUT\", \"form_data\": {\"dob\": \"2001-09-02\", \"name\": \"Yamin\", \"email\": \"yamin@appinion.com\", \"phone\": \"01703084338\", \"photo\": {}, \"designation\": \"Engineer\"}}', NULL, '2025-09-18 05:58:32', '2025-09-18 05:58:32'),
+(45, 'PUT', 'http://127.0.0.1:8000/users/23', NULL, NULL, NULL, 'App\\Models\\User', 1, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/users/23\", \"user\": {\"name\": \"Appinion (superadmin)\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"PUT\", \"form_data\": {\"dob\": \"2025-08-31\", \"name\": \"check bulk\", \"email\": \"ab@email.com\", \"phone\": \"01676470802\", \"photo\": {}, \"designation\": \"dshs\"}}', NULL, '2025-09-18 05:59:01', '2025-09-18 05:59:01'),
+(46, 'PUT', 'http://127.0.0.1:8000/users/22', NULL, NULL, NULL, 'App\\Models\\User', 1, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/users/22\", \"user\": {\"name\": \"Appinion (superadmin)\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"PUT\", \"form_data\": {\"dob\": \"1999-01-01\", \"name\": \"Mark Peck\", \"email\": \"wamubexava@mailinator.com\", \"phone\": \"01676470802\", \"photo\": {}, \"designation\": \"Ipsum labore nulla\"}}', NULL, '2025-09-18 05:59:13', '2025-09-18 05:59:13'),
+(47, 'PUT', 'http://127.0.0.1:8000/users/21', NULL, NULL, NULL, 'App\\Models\\User', 1, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/users/21\", \"user\": {\"name\": \"Appinion (superadmin)\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"PUT\", \"form_data\": {\"dob\": \"2001-01-01\", \"name\": \"test 123\", \"email\": \"yamin@appinionbd.com\", \"phone\": \"01676470802\", \"photo\": {}, \"designation\": \"test112\"}}', NULL, '2025-09-18 05:59:21', '2025-09-18 05:59:21'),
+(48, 'PUT', 'http://127.0.0.1:8000/users/1', NULL, NULL, NULL, 'App\\Models\\User', 1, '{\"ip\": \"127.0.0.1\", \"url\": \"http://127.0.0.1:8000/users/1\", \"user\": {\"name\": \"Appinion (superadmin)\", \"user_type\": \"n/a\"}, \"agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36\", \"method\": \"PUT\", \"form_data\": {\"dob\": \"2025-09-01\", \"name\": \"Appinion\", \"email\": \"yamin@appinionbd.com\", \"phone\": \"01703084338\", \"photo\": {}, \"designation\": \"Super Admin\"}}', NULL, '2025-09-18 06:01:25', '2025-09-18 06:01:25');
 
 -- --------------------------------------------------------
 
@@ -141,20 +149,6 @@ INSERT INTO `companies` (`id`, `name`, `slug`, `phone`, `address`, `logo`, `is_a
 (3, 'Sajida Foundation', 'sajida-foundation-1752749264', '0199999999', 'Gulshan 1', 'companies/Vpr5a6fR9O8nNXHyWagjzBafU8k7JaZDj5t3MgZr.jpg', 0, NULL, '2025-07-17 04:47:44', '2025-07-17 05:13:16'),
 (4, 'Test Company', 'test-company-1752749460', '01676470802', 'Test Address', 'companies/umJwgT9SqlKrkngJ3y5uengwZP9Zyf6CuMpQ5KuR.jpg', 0, '2025-07-17 04:52:41', '2025-07-17 04:51:00', '2025-07-17 04:52:41'),
 (5, 'test create', 'test-create-1752749736', '0123456789', 'dhaka bangladesh', 'companies/f3xMWMPa3atSXT92iN0cjyxYF7dejvRxhCPMp5JN.jpg', 1, NULL, '2025-07-17 04:55:36', '2025-07-17 04:55:47');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `districts`
---
-
-CREATE TABLE `districts` (
-  `id` int UNSIGNED NOT NULL,
-  `district_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `is_active` tinyint(1) NOT NULL DEFAULT '0',
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -362,7 +356,8 @@ INSERT INTO `permissions` (`id`, `name`, `slug`, `controller`, `description`, `i
 (7, 'UserController@destroy', 'user_controller@destroy', 'UserController', NULL, 1, NULL, '2025-09-18 03:56:35', '2025-09-18 03:56:35'),
 (8, 'UserController@updateStatus', 'user_controller@update_status', 'UserController', NULL, 1, NULL, '2025-09-18 03:56:35', '2025-09-18 03:56:35'),
 (9, 'UserController@passwordReset', 'user_controller@password_reset', 'UserController', NULL, 1, NULL, '2025-09-18 03:56:35', '2025-09-18 03:56:35'),
-(10, 'UserController@bulkUpload', 'user_controller@bulk_upload', 'UserController', NULL, 1, NULL, '2025-09-18 03:56:35', '2025-09-18 03:56:35');
+(10, 'UserController@bulkUpload', 'user_controller@bulk_upload', 'UserController', NULL, 1, NULL, '2025-09-18 03:56:35', '2025-09-18 03:56:35'),
+(11, 'UserController@sync_user_roles', 'user_controller@sync_user_roles', 'UserController', NULL, 1, NULL, '2025-09-18 05:47:51', '2025-09-18 05:47:51');
 
 -- --------------------------------------------------------
 
@@ -419,7 +414,8 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `title`, `slug`, `is_active`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (1, 'Admin', 'admin', 1, NULL, '2025-07-16 22:06:44', '2025-07-16 22:06:44'),
-(2, 'User', 'user', 1, NULL, '2025-07-16 22:07:19', '2025-07-16 22:07:19');
+(2, 'User', 'user', 1, NULL, '2025-07-16 22:07:19', '2025-07-16 22:07:19'),
+(3, 'Sit omnis quia cons', 'sit-omnis-quia-cons', 1, NULL, '2025-09-18 05:48:24', '2025-09-18 05:48:24');
 
 -- --------------------------------------------------------
 
@@ -501,15 +497,15 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `userid`, `email`, `email_verified_at`, `password`, `remember_token`, `primary_role_id`, `updated_by`, `is_password_changed`, `gender`, `dob`, `designation`, `is_active`, `phone`, `photo`, `address`, `is_superuser`, `can_access_admin_panel`, `last_login`, `last_update_state`, `deleted_at`, `created_at`, `updated_at`, `company_id`) VALUES
-(1, 'Appinion', 'superadmin', NULL, NULL, '$2y$12$cnXk.KxHSXCDecIQhCkb8.f2YJHnaL1KqvP88VGYcV.zuNEccGCoy', NULL, 2, 1, 0, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, 1, '2025-09-18 05:21:49', NULL, NULL, '2024-04-16 20:27:31', '2025-09-18 05:21:49', 1),
+(1, 'Appinion', 'superadmin', 'yamin@appinionbd.com', NULL, '$2y$12$cnXk.KxHSXCDecIQhCkb8.f2YJHnaL1KqvP88VGYcV.zuNEccGCoy', NULL, 2, 1, 0, NULL, '2025-09-01', 'Super Admin', 1, '01703084338', 'user/YA7nZiBjmyo1uxaK9euMvO5HzWRxT5mU16q0bDss.jpg', NULL, 1, 1, '2025-09-18 05:46:13', NULL, NULL, '2024-04-16 20:27:31', '2025-09-18 06:01:25', 1),
 (2, 'Admin', 'admin', '', NULL, '$2y$12$cnXk.KxHSXCDecIQhCkb8.f2YJHnaL1KqvP88VGYcV.zuNEccGCoy', NULL, 1, 1, 0, NULL, NULL, 'Engineer', 1, NULL, NULL, NULL, 0, 1, '2025-05-21 00:43:08', NULL, NULL, '2024-04-16 20:27:31', '2025-05-21 00:43:08', 0),
 (3, 'Test', '123', NULL, NULL, '$2y$12$mr2El3V0XrZt6heubcSCrevc/Ch1VeHMNFybpAanmDh3HSP6X233K', NULL, 2, 1, 1, NULL, NULL, 'Engineer', 1, '01676909099', NULL, NULL, 0, 0, NULL, NULL, NULL, '2025-07-16 22:38:36', '2025-07-16 23:55:15', 0),
 (18, 'Yamin', 'ap1_deleted_1752745219', 'yamin@appinion.com', NULL, '$2y$12$5p7CcBaZGjfsI8QTAE5Ux.Gvbw60dTn7C3JWX7IqHEYJDOIS4ye8O', NULL, 2, 1, 0, 1, NULL, 'Engineer', 1, '01703084338', NULL, 'Mirpur', 0, 0, NULL, NULL, '2025-07-17 03:40:20', '2025-07-17 03:26:57', '2025-07-17 03:40:20', 0),
-(19, 'Yamin', 'ap1', 'yamin@appinion.com', NULL, '$2y$12$/T2dHM/Z/m03rvAfnMJvpeLT9IBzNaarT32sHTzBItn7uvjcbkJOS', NULL, 2, 1, 0, 1, '2001-09-02', 'Engineer', 1, '01703084338', 'user/MfFR12BPooiwT4qvKErwSmBH8ogRpH4CdmpseT2P.jpg', 'Mirpur', 0, 0, NULL, NULL, NULL, '2025-07-17 03:40:26', '2025-09-18 04:58:13', 0),
+(19, 'Yamin', 'ap1', 'yamin@appinion.com', NULL, '$2y$12$/T2dHM/Z/m03rvAfnMJvpeLT9IBzNaarT32sHTzBItn7uvjcbkJOS', NULL, 2, 1, 0, 1, '2001-09-02', 'Engineer', 1, '01703084338', 'user/Cq8ibCZ7HEzzR3x5vzGy6D2pTMZWkuaChApG0Bhu.jpg', 'Mirpur', 0, 0, NULL, NULL, NULL, '2025-07-17 03:40:26', '2025-09-18 05:58:32', 0),
 (20, 'Test User', 'admin123', NULL, NULL, '$2y$12$3j96LyRS2tVVxKzdwJPxKu2qg.C.ARWUKm5aprjzjy9IxXqhYqJtO', NULL, 2, 1, 0, NULL, NULL, 'Engineer', 1, '01234567897', NULL, NULL, 0, 0, '2025-09-08 00:35:01', NULL, NULL, '2025-08-26 22:21:19', '2025-09-08 00:35:01', 0),
-(21, 'test 123', 'appinion12', 'yamin@appinionbd.com', NULL, '$2y$12$DCw18l.o3xPbyKtRzNEyuef5Z5.tUnnLinBZ6QzDm3dPEI0DaQk6K', NULL, 2, 1, 0, NULL, '2001-01-01', 'test112', 1, '01676470802', 'user/xQMb1p92qIkdy1xo5otfC8Il41ocR0D4KCoBmDLl.jpg', NULL, 0, 0, NULL, NULL, NULL, '2025-09-18 03:39:28', '2025-09-18 04:49:56', 1),
-(22, 'Mark Peck', 'rejuwivuzi', 'wamubexava@mailinator.com', NULL, '$2y$12$9GC57.45U9iXV7v/R75PJehSwfJ48qJurK6flsS5BxZQNawf9rnHC', NULL, 2, 1, 0, 1, '1999-01-01', 'Ipsum labore nulla', 1, '01676470802', 'user/4bdHBxHctRCnnHWJV58aI38m67axpU5uvG84oz26.jpg', NULL, 0, 0, NULL, NULL, NULL, '2025-09-18 03:53:55', '2025-09-18 04:47:09', 1),
-(23, 'check bulk', '1awa1', 'ab@email.com', NULL, '$2y$12$81VhoscgxziqFFazidQHCufyzobihIDPmwEK/Ep1bRAj8BIC2fXOO', NULL, 2, 1, 0, NULL, '2025-08-31', 'dshs', 1, '01676470802', 'user/kl3ivRQit7SGjZh4hPMJyBUPaD6ZVXIY1FnNkija.jpg', 'assss', 0, 0, NULL, NULL, NULL, '2025-09-18 03:54:42', '2025-09-18 05:08:01', 1);
+(21, 'test 123', 'appinion12', 'yamin@appinionbd.com', NULL, '$2y$12$DCw18l.o3xPbyKtRzNEyuef5Z5.tUnnLinBZ6QzDm3dPEI0DaQk6K', NULL, 2, 1, 0, NULL, '2001-01-01', 'test112', 1, '01676470802', 'user/RFjZSNJ7AVgCUy9nYTjFD6dntjukB5m6xPml2TtY.jpg', NULL, 0, 0, NULL, NULL, NULL, '2025-09-18 03:39:28', '2025-09-18 05:59:21', 1),
+(22, 'Mark Peck', 'rejuwivuzi', 'wamubexava@mailinator.com', NULL, '$2y$12$9GC57.45U9iXV7v/R75PJehSwfJ48qJurK6flsS5BxZQNawf9rnHC', NULL, 2, 1, 0, 1, '1999-01-01', 'Ipsum labore nulla', 1, '01676470802', 'user/rizOFcVMZRCdHsLENzqcurYUUn8KFOJS4ySmJRgu.jpg', NULL, 0, 0, NULL, NULL, NULL, '2025-09-18 03:53:55', '2025-09-18 05:59:13', 1),
+(23, 'check bulk', '1awa1', 'ab@email.com', NULL, '$2y$12$81VhoscgxziqFFazidQHCufyzobihIDPmwEK/Ep1bRAj8BIC2fXOO', NULL, 2, 1, 0, NULL, '2025-08-31', 'dshs', 1, '01676470802', 'user/ol8uOBElizxXuhVI3q1Emd4dvbARJXbafx3xBsTV.jpg', 'assss', 0, 0, NULL, NULL, NULL, '2025-09-18 03:54:42', '2025-09-18 05:59:01', 1);
 
 --
 -- Indexes for dumped tables
@@ -540,12 +536,6 @@ ALTER TABLE `cache_locks`
 -- Indexes for table `companies`
 --
 ALTER TABLE `companies`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `districts`
---
-ALTER TABLE `districts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -661,19 +651,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `companies`
 --
 ALTER TABLE `companies`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `districts`
---
-ALTER TABLE `districts`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -715,7 +699,7 @@ ALTER TABLE `otps`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `permission_role`
@@ -733,7 +717,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` smallint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` smallint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `role_user`
