@@ -265,7 +265,7 @@ class UserController extends Controller
                     $user->phone = $phone;
                     $user->email = $email;
                     $user->address = $address;
-                    $user->password = Hash::make(env('USER_DEFAULT_PASSWORD', 'Appinion@2025'));
+                    $user->password = Hash::make(env('USER_DEFAULT_PASSWORD'));
                     $user->company_id = session('company_id');
                     $user->is_active = 1;
                     $user->primary_role_id = Role::where('slug', 'user')->value('id');
