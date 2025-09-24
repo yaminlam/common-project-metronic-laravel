@@ -210,103 +210,126 @@ class UserController extends Controller
 
     public function bulkUpload(Request $request)
     {
-        $validator = \Validator::make($request->all(), [
+        $request->validate([
             'user_bulk_excel' => 'required|file|mimes:xlsx,xls'
         ]);
-
-        if ($validator->fails()) {
-            return back()->withErrors($validator)->withInput();
-        }
 
         try {
             $rows = IOFactory::load($request->file('user_bulk_excel')->getPathname())
                 ->getActiveSheet()
                 ->toArray();
 
-            // Expected columns: name, userid, gender, designation, phone, email, address, territory_id
-            if (count($rows[0]) < 8) {
-                return back()->withError('Invalid format. Required columns: name, userid, gender, designation, phone, email, address, territory_id');
+            if (empty($rows) || count($rows[0]) < 7) {
+                return back()->withError('Invalid format. Required columns: name, userid, gender, designation, phone, email, address');
             }
 
             $success = 0;
-            $importErrors = [];
+            $errors = [];
+            $userRoleId = Role::where('slug', 'user')->value('id');
 
+            // Process each row (skip header)
             foreach (array_slice($rows, 1) as $index => $row) {
-                $line = $index + 2; 
-
-                $name = trim($row[0] ?? '');
-                $userid = trim($row[1] ?? '');
-                $gender = strtolower(trim($row[2] ?? ''));
-                $designation = trim($row[3] ?? '');
-                $phone = trim($row[4] ?? '');
-                $email = trim($row[5] ?? '');
-                $address = trim($row[6] ?? '');
-
-
-                if (empty($name) || empty($userid) || empty($designation) || empty($phone)) {
-                    $importErrors[] = "Row $line: Missing required fields.";
-                    continue;
-                }
-
-                if (User::where('userid', $userid)->exists()) {
-                    $importErrors[] = "Row $line: User ID '$userid' already exists.";
-                    continue;
-                }
+                $lineNumber = $index + 2;
 
                 try {
-                    DB::beginTransaction();
+                    $data = [
+                        'name' => trim($row[0] ?? ''),
+                        'userid' => trim($row[1] ?? ''),
+                        'gender' => strtolower(trim($row[2] ?? '')),
+                        'designation' => trim($row[3] ?? ''),
+                        'phone' => trim($row[4] ?? ''),
+                        'email' => trim($row[5] ?? ''),
+                        'address' => trim($row[6] ?? ''),
+                    ];
 
-                    $user = new User();
+                    // Validate required fields
+                    $required = ['name', 'userid', 'designation', 'phone'];
+                    $missing = array_filter($required, fn($field) => empty($data[$field]));
+                    
+                    if ($missing) {
+                        throw new \Exception('Missing required fields: ' . implode(', ', $missing));
+                    }
 
-                    $user->name = $name;
-                    $user->userid = $userid;
-                    $user->gender = $gender === 'male' ? 1 : ($gender === 'female' ? 2 : null);
-                    $user->designation = $designation;
-                    $user->phone = $phone;
-                    $user->email = $email;
-                    $user->address = $address;
-                    $user->password = Hash::make(env('USER_DEFAULT_PASSWORD'));
-                    $user->company_id = session('company_id');
-                    $user->is_active = 1;
-                    $user->primary_role_id = Role::where('slug', 'user')->value('id');
-                    $user->can_access_admin_panel = 0;
-                    $user->is_password_changed = 0;
-                    $user->created_at = now();
-                    $user->updated_at = now();
+                    // Check for duplicate userid
+                    if (User::where('userid', $data['userid'])->exists()) {
+                        throw new \Exception("User ID '{$data['userid']}' already exists");
+                    }
 
-                    $user->save();
+                    // Validate email format if provided
+                    if (!empty($data['email']) && !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                        throw new \Exception("Invalid email format");
+                    }
 
-                    $roleUser = new RoleUser();
+                    // Create user in transaction
+                    DB::transaction(function () use ($data, $userRoleId) {
+                        $user = User::create([
+                            'name' => $data['name'],
+                            'userid' => $data['userid'],
+                            'gender' => match($data['gender']) {
+                                'male' => 1,
+                                'female' => 2,
+                                default => null
+                            },
+                            'designation' => $data['designation'],
+                            'phone' => $data['phone'],
+                            'email' => $data['email'],
+                            'address' => $data['address'],
+                            'password' => Hash::make(env('USER_DEFAULT_PASSWORD')),
+                            'company_id' => session('company_id'),
+                            'is_active' => 1,
+                            'primary_role_id' => $userRoleId,
+                            'can_access_admin_panel' => 0,
+                            'is_password_changed' => 0,
+                        ]);
 
-                    $roleUser->role_id = Role::where('slug', 'user')->value('id');
-                    $roleUser->user_id = $user->id;
-                    $roleUser->is_primary = 1;
-                    $roleUser->is_active = 1;
-                    $roleUser->created_at = now();
-                    $roleUser->updated_at = now();
-                    $roleUser->save();
-
-                    DB::commit();
+                        RoleUser::create([
+                            'role_id' => $userRoleId,
+                            'user_id' => $user->id,
+                            'is_primary' => 1,
+                            'is_active' => 1,
+                        ]);
+                    });
 
                     $success++;
-                } catch (\Throwable $e) {
-                    DB::rollBack();
-                    $importErrors[] = "Row $line: " . $e->getMessage();
+
+                } catch (\Exception $e) {
+                    $errors[] = "Row $lineNumber: " . $e->getMessage();
                 }
             }
 
+            // Build response with detailed errors
             if ($success === 0) {
-                return back()->withError("Import failed. All rows have errors.")
-                            ->with('import_errors', $importErrors);
+                $errorMessage = "Import failed. Found " . count($errors) . " error(s):\n";
+                $errorMessage .= implode("\n", array_slice($errors, 0, 10)); // Show first 10 errors
+                
+                if (count($errors) > 10) {
+                    $errorMessage .= "\n... and " . (count($errors) - 10) . " more errors.";
+                }
+                
+                return back()
+                    ->withError($errorMessage)
+                    ->with('import_errors', $errors);
             }
 
-            $message = "$success user(s) imported successfully.";
-            if ($importErrors) $message .= " " . count($importErrors) . " row(s) skipped.";
+            // Success with partial errors
+            if ($errors) {
+                $message = "$success user(s) imported successfully with " . count($errors) . " error(s):\n";
+                $message .= implode("\n", array_slice($errors, 0, 5)); // Show first 5 errors
+                
+                if (count($errors) > 5) {
+                    $message .= "\n... and " . (count($errors) - 5) . " more errors.";
+                }
+                
+                return back()
+                    ->withSuccess("$success user(s) imported successfully")
+                    ->withError($message)
+                    ->with('import_errors', $errors);
+            }
 
-            return back()->withSuccess($message)
-                        ->with('import_errors', $importErrors);
+            // Complete success
+            return back()->withSuccess("$success user(s) imported successfully.");
 
-        } catch (\Throwable $e) {
+        } catch (\Exception $e) {
             return back()->withError("Import error: " . $e->getMessage());
         }
     }

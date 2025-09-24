@@ -88,7 +88,9 @@
 @push('scripts')
     <script>
         $(document).ready(async function() {
-           //
+            $("#filter_role_id").select2({
+                minimumResultsForSearch: 5
+            });
         })
 
         $('#filterForm').submit(function(e) {
