@@ -68,7 +68,7 @@
                                 <div class="text-center p-2 rounded {{ $user->can_access_admin_panel ? 'bg-info bg-opacity-10' : 'bg-light' }}">
                                     <i class="fas fa-cog fa-lg mb-1 text-{{ $user->can_access_admin_panel ? 'info' : 'muted' }}"></i>
                                     <div class="small fw-medium text-{{ $user->can_access_admin_panel ? 'info' : 'muted' }}">
-                                        {{ $user->can_access_admin_panel ? 'Panel' : 'No Panel' }}
+                                        {{ $user->can_access_admin_panel ? 'Can Access Panel' : 'No Panel Access' }}
                                     </div>
                                 </div>
                             </div>

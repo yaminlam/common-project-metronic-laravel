@@ -114,7 +114,9 @@
 @push('scripts')
     <script>
         $(document).ready(async function() {
-            $("#primary_role_id").select2();
+            $("#primary_role_id, #gender").select2({
+                minimumResultsForSearch: 5
+            });
             $("#kt_datepicker_2").flatpickr();
 
         })
