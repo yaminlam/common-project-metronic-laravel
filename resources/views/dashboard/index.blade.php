@@ -17,7 +17,7 @@
                         <div class="d-flex align-items-center">
                             <span class="fs-2hx text-white fw-bold me-6">-</span>
                         </div>
-                        <p class="fs-3 fw-bold text-white py-2">Label 1</p>
+                        <p class="fs-3 fw-bold text-white py-2">Label-1</p>
                     </div>
                 </div>
             </div>

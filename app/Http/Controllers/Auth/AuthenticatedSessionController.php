@@ -41,10 +41,10 @@ class AuthenticatedSessionController extends Controller
             session(['role_id' => $primary_role->id]);
         }
 
-        $company = Company::query()->where('id', $user->company_id)->first();
+        // $company = Company::query()->where('id', $user->company_id)->first();
 
-        session(['company_id' => $company->id]);
-        session(['company' => $company->name]);
+        // session(['company_id' => $company->id]);
+        // session(['company' => $company->name]);
 
         $user->last_login = now();
         $user->save();

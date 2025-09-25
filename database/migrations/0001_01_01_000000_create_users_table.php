@@ -32,6 +32,7 @@ return new class extends Migration
             $table->boolean('can_access_admin_panel')->default(false);
             $table->timestamp('last_login')->nullable();
             $table->text('last_update_state')->nullable()->comment('Data difference for last update');
+            // $table->unsignedInteger('company_id');
 
             $table->softDeletes();
             $table->timestamps();

@@ -76,7 +76,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::active()
-            ->where('slug', 'user')
+            ->whereIn('slug', ['user', 'admin'])
             ->get();
         return view('users.create', compact('roles'));
     }
@@ -98,7 +98,7 @@ class UserController extends Controller
 
         try {
             $validated['password'] = Hash::make(env('USER_DEFAULT_PASSWORD', 'appinion'));
-            $validated['company_id'] = session('company_id');
+            // $validated['company_id'] = session('company_id');
 
             DB::transaction(function () use ($validated) {
 
@@ -275,7 +275,7 @@ class UserController extends Controller
                             'email' => $data['email'],
                             'address' => $data['address'],
                             'password' => Hash::make(env('USER_DEFAULT_PASSWORD')),
-                            'company_id' => session('company_id'),
+                            // 'company_id' => session('company_id'),
                             'is_active' => 1,
                             'primary_role_id' => $userRoleId,
                             'can_access_admin_panel' => 0,

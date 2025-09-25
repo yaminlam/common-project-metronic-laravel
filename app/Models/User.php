@@ -117,7 +117,7 @@ class User extends Authenticatable
         'is_password_changed',
         'last_update_state',
         'territory_id',
-        'company_id',
+        // 'company_id',
     ];
 
     protected $hidden = [
@@ -221,8 +221,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function company()
-    {
-        return $this->belongsTo(Company::class, 'company_id');
-    }
+    // public function company()
+    // {
+    //     return $this->belongsTo(Company::class, 'company_id');
+    // }
 }

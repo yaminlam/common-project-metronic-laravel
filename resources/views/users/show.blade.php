@@ -40,20 +40,21 @@
             </div>
 
             <!-- Role & Access Card -->
-            @if($user->user_type || $user->company)
+            {{-- || $user->company --}}
+            @if($user->user_type) 
                 <div class="card border-0 shadow-sm">
                     <div class="card-header bg-transparent border-0 pb-0">
                         <h6 class="card-title mb-0 fw-bold">Role & Access</h6>
                     </div>
                     <div class="card-body pt-2">
-                        @if($user->company)
+                        {{-- @if($user->company)
                             <div class="mb-3">
                                 <small class="text-muted d-block mb-1">Company</small>
                                 <span class="badge bg-secondary bg-opacity-10 text-secondary px-2 py-1">
                                     {{ $user->company->name }}
                                 </span>
                             </div>
-                        @endif
+                        @endif --}}
                         
                         <div class="row g-2">
                             <div class="col-6">
@@ -88,7 +89,7 @@
                     <div class="row g-3">
                         <div class="col-lg-6">
                             <div class="mb-2">
-                                <small class="text-muted">Full Name</small>
+                                <small class="text-muted">Name</small>
                                 <div class="fw-medium">{{ $user->name }}</div>
                             </div>
                             <div class="mb-2">

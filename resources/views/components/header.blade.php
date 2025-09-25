@@ -59,13 +59,13 @@
 
                 <div class="menu menu-rounded menu-column menu-lg-row my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0"
                      id="kt_app_header_menu" data-kt-menu="true">
-                    @if (session('company_id'))
+                    {{-- @if (session('company_id'))
                         <div class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
                         <span class="menu-link">
                             <span class="menu-title">Company: {{ session('company') }}</span>
                         </span>
                         </div>
-                    @endif
+                    @endif --}}
                 </div>
 
                 <!--begin::Theme mode-->
